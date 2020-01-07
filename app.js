@@ -1,5 +1,5 @@
 const port 				= process.env.PORT || 3000;
-const db 				= process.env.MONGODB_URL;
+const db 				= process.env.MONGODB_URL || "mongodb://localhost:27017/yelp_camp_12";
 const express 			= require("express"),
 	  app 				= express(),
   	  bodyParser		= require("body-parser"),
