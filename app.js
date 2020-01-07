@@ -1,4 +1,5 @@
 const port 				= process.env.PORT || 3000;
+const db 				= process.env.MONGODB_URL;
 const express 			= require("express"),
 	  app 				= express(),
   	  bodyParser		= require("body-parser"),
@@ -15,7 +16,7 @@ var commentRoutes 		= require("./routes/comments"),
 
 mongoose.set('useUnifiedTopology', true);
 //mongoose.connect("mongodb://localhost:27017/yelp_camp_12", {useNewUrlParser: true});
-mongoose.connect("mongodb+srv://Roy:Yelpcamp1@yelpcamp-afbne.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect(db, {useNewUrlParser: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
